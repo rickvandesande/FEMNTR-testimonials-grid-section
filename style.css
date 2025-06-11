@@ -191,6 +191,22 @@ h2 {
         "five five"
         ;
     }
+    .one {
+        position: relative;
+    }
+    .one::before {
+        content: '';
+        background-image: url(images/bg-pattern-quotation.svg);
+        width:6.5rem;
+        height: 6.5rem;
+        position: absolute;
+        top: 0;
+        left: 376px; 
+        border: 1px solid hotpink;
+    }
+    .testimonial {
+        z-index: 999;
+    }
 }
 
 @media (min-width: 75rem) {
