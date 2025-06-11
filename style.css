@@ -1,0 +1,215 @@
+/* -- CSS RESET --- */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+/* -- END CSS RESET -- */
+
+/* -- VARIABLES -- */
+:root {
+
+    --black: hsl(0, 0%, 7%);
+    --darkblue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    --grey-500: hsl(217, 19%, 35%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-100: hsl(214, 17%, 92%);
+    
+    --purple-500: hsl(263, 55%, 52%);
+    --purple-300: hsl(264, 82%, 70%);
+    --purple-50: hsl(260, 100%, 95%);
+
+    --text-preset-1: 600 1.25rem/120% "Barlow Semi Condensed", sans-serif;
+    --text-preset-2: 500 0.8125rem/110% "Barlow Semi Condensed", sans-serif;
+    --text-preset-3: 500 0.8125rem/140% "Barlow Semi Condensed", sans-serif;
+    --text-preset-4: 500 0.6785rem/110% "Barlow Semi Condensed", sans-serif;
+
+    --spacing-900: 5rem;
+    --spacing-700: 4rem;
+    --spacing-500: 2.5rem;
+    --spacing-400: 2rem;
+    --spacing-300: 1.5rem;
+    --spacing-200: 1rem;
+    --spacing-100: 0.5rem;
+    --spacing-50: 0.25rem; 
+}
+/* -- END VARIABLES */
+html {
+    font-weight: 500;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100svh;
+}
+main {
+    max-width: 70rem;
+    padding-block: var(--spacing-700);
+    padding-inline: var(--spacing-400);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    ;
+    gap: var(--spacing-400);
+}
+article {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-400);
+    gap: var(--spacing-200);
+    border-radius: var(--spacing-200);
+    box-shadow: 40px 60px 50px -47px hsla(217, 19%, 35%, 0.2474);
+    background-color: var(--article-bg, var(--white));
+    color: var(--article-fg, var(--grey-500));
+}
+p {
+    font: var(--text-preset-3);
+}
+h2 {
+    font: var(--text-preset-1);
+}
+.author {
+    display: flex;
+    gap: var(--spacing-200);
+    align-items: center;
+}
+.author-img {
+    border-radius: 50%;
+    border: 1px solid var(--purple-300);
+    width: 28px;
+}
+.author-name-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-50);
+}
+.author-name {
+    font: var(--text-preset-2);
+}
+.verified {
+    font: var(--text-preset-4);
+}
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+}
+.one {
+    --article-bg: var(--purple-500);
+    --article-fg: var(--purple-50);
+    
+    grid-area: one;
+}
+.two {
+    --article-bg: var(--grey-500);
+    --article-fg: var(--grey-100);
+
+    grid-area: two;
+}
+.three {
+    grid-area: three;
+}
+.four {
+    --article-bg: var(--darkblue);
+    --article-fg: var(--grey-200);
+
+    grid-area: four;
+}
+.five {
+    grid-area: five;
+}
+
+@media (min-width: 48rem) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "one one"
+        "two three"
+        "four four"
+        "five five"
+        ;
+    }
+}
+
+@media (min-width: 75rem) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "one one two five"
+        "three four four five"
+        ;
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: var(--purple-500);
+    color: var(--white);
+    padding-block: var(--spacing-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer a {
+    color: var(--grey-200);
+}
