@@ -84,7 +84,9 @@ h1, h2, h3, h4, h5, h6 {
     --spacing-300: 1.5rem;
     --spacing-200: 1rem;
     --spacing-100: 0.5rem;
-    --spacing-50: 0.25rem; 
+    --spacing-50: 0.25rem;
+
+    --box-shadow-default: 40px 60px 50px -47px hsla(217, 19%, 35%, 0.2474);
 }
 /* -- END VARIABLES */
 html {
@@ -136,7 +138,7 @@ h2 {
 .author-img {
     border-radius: 50%;
     border: 1px solid var(--purple-300);
-    width: 28px;
+    width: 1.75rem;
 }
 .author-name-container {
     display: flex;
